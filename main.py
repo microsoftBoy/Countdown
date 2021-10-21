@@ -14,7 +14,7 @@ window = tk.Tk()
 window.wm_attributes('-topmost', 1)  # 窗口置顶
 window.attributes("-alpha", 0.99)
 window.title('计时器')  # 设置窗口名字
-window.geometry('195x150')  # 设置窗口大小
+window.geometry('225x180')  # 设置窗口大小
 cheak = 0
 
 
@@ -135,9 +135,10 @@ ft1 = tkFont.Font(underline=1)
 L2 = tk.Label(window, text=str(fre), font=ft1)
 # L2.grid(row=1, column=2)
 var = 25  # 倒计时数字
-ft = tkFont.Font(size=40)
-L3 = tk.Label(window, text="05:00", font=ft)
-L3.place(x=40, y=20)  # 直接使用坐标定位
+ft = tkFont.Font(size=50)
+L3 = tk.Label(window, text="05:00", font=ft, pady=20)
+# L3.place(x=40, y=20)  # 直接使用坐标定位
+L3.pack()  # 自动居中
 
 # 设置进度条
 # canvas = tk.Canvas(window, width=149, height=10, bg="white") #width 因为长了一点-1不美观 150-1=149
@@ -152,9 +153,11 @@ L3.place(x=40, y=20)  # 直接使用坐标定位
 
 T25 = tk.Button(window, text='25分', command=count_deep25)  # 按键设置
 # T25.place(x=20,y=115)
-T05 = tk.Button(window, text='开始', command=count_deep5)
-T05.place(x=20, y=115)
-clean = tk.Button(window, text='重置', command=reset)
-clean.place(x=120, y=115)
+T05 = tk.Button(window, text='开始', pady=2, command=count_deep5)
+# T05.place(x=20, y=115)
+T05.pack()
+clean = tk.Button(window, text='重置', pady=10, command=reset)
+# clean.place(x=120, y=115)
+clean.pack()
 
 window.mainloop()  # 无限循环
