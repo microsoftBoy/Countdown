@@ -14,7 +14,7 @@ window = tk.Tk()
 window.wm_attributes('-topmost', 1)  # 窗口置顶
 window.attributes("-alpha", 0.99)
 window.title('计时器')  # 设置窗口名字
-window.geometry('225x180')  # 设置窗口大小
+window.geometry('220x140')  # 设置窗口大小
 cheak = 0
 
 
@@ -155,9 +155,13 @@ T25 = tk.Button(window, text='25分', command=count_deep25)  # 按键设置
 # T25.place(x=20,y=115)
 T05 = tk.Button(window, text='开始', pady=2, command=count_deep5)
 # T05.place(x=20, y=115)
-T05.pack()
-clean = tk.Button(window, text='重置', pady=10, command=reset)
+# T05.pack()
+T05.place(relx=0.2, rely=0.7)
+clean = tk.Button(window, text='重置', pady=2, command=reset)
 # clean.place(x=120, y=115)
-clean.pack()
+# clean.pack()
+clean.place(relx=0.5, rely=0.7)
+
+
 
 window.mainloop()  # 无限循环
